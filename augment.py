@@ -30,7 +30,7 @@ def apply_wordvectors(word_list, args):
     augmentations = {}
     for w in tqdm(word_list, desc="Extracting similar words"):
         if w in model.vocab:
-            augmentations[w] = list(map(lambda x:x[0], model.most_similar(w, topn=args.word_vectors_threshold)))
+            augmentations[w] = list( l for l in map(lambda x:x[0], model.most_similar(w, topn=args.word_vectors_threshold)) if "_" not in l)
         else:
             augmentations[w] = []
 
