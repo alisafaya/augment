@@ -6,7 +6,7 @@
 
 __Example usage__
 
-`python augment.py input_sample.txt --output-file output_sample.txt`
+`python augment.py --input-file input_sample.txt --output-file output_sample.txt`
 
 __Options__
 
