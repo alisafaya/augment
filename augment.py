@@ -80,7 +80,7 @@ if __name__ == '__main__':
     if not args.only_word_net:
         if args.aggregate:
             print("Extracting word-vectors from augmented list")
-            word_list = word_augmentations.values()
+            word_list += itertools.chain(*list(word_augmentations.values()))
 
         augmentations = apply_wordvectors(word_list, args)
         for w in augmentations:
